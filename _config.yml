@@ -1,0 +1,6 @@
+# _config.yml
+title: Pai Sho
+description: ###
+baseurl: Pai-Sho.com
+url: "cubeindustry.github.io"
+permalink: /:title/
