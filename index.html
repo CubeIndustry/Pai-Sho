@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Entdecke die fesselnde Welt von Pai Sho, dem legendären Spiel der Weisheit und Strategie. Lade dir das Spiel herunter und werde Teil einer strategischen Gemeinschaft!">
+    <meta name="keywords" content="Pai Sho, Spiel, Weisheit, Strategie">
+    <title>Pai Sho</title>
+    <link rel="icon" href="lotus_rot.png" type="image/png">
+    <style>
+        body{
+            background-color: #9B726B;
+            margin: 0;
+            padding: 0;
+        }
+        /*header*/
+        header{
+            background-color: #9B726B;
+            display: flex;
+        }
+        .lotus{
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+        }
+        h1{
+            color: #EBE5E1;
+            font-family: sans-serif, Ariel, Helvetica;
+            font-size: 50px;
+        }
+        /*Links*/
+        .seiten {
+            display: flex;
+            justify-content: space-between; 
+            width: 100vw; 
+            padding: 0 20px; 
+            box-sizing: border-box; 
+        }
+
+        .link {
+            display: flex;
+            background-color: #73524C;
+            align-items: center; 
+            border: none;
+            border-radius: 0px;
+            flex: 1; 
+            text-align: center; 
+            margin: 0 5px; 
+        }
+        .link:hover{
+            background-color: #654641;
+        }
+        a{
+            color: #EBE5E1;
+            text-decoration: none;
+            font-family: sans-serif, Ariel, Helvetica;
+            font-size: 20px;
+            align-items: center;
+        }
+        .aimg{
+            height: 50px;
+            margin: 4px;
+        }
+        /*content*/
+        .content{
+            background-color: #EBE5E1;
+            padding-bottom: 5%;
+        }
+        h2, h3{
+            font-family: sans-serif, Ariel, Helvetica;
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-bottom: 20px;
+        }
+        h3{
+            margin-top: 40px;
+        }
+        p{
+            font-family: sans-serif, Ariel, Helvetica;
+            margin-left: 8%;
+            margin-right: 8%;
+        }
+        .ueberschrift{
+            padding-top: 3%;
+        }
+        @media (max-width: 720px){
+            .seiten {
+                flex-direction: column; 
+                align-items: center; 
+            }
+
+            .link {
+                width: 100%; 
+                margin: 5px 0; 
+            }
+
+            a {
+                font-size: 18px; 
+            }
+
+            .aimg {
+                height: 40px; 
+            }
+        }
+    </style>
+</head>
+    
+<body>
+    <header>
+        <img src="lotus_rot.png" class="lotus" alt="-">
+        <h1>Pai Sho</h1>
+    </header>
+    <div class="seiten">
+        <div class="link">
+        <img src="luft_weiß.png" class="aimg" alt="-">
+            <a href="#" onclick="reloadPage()">Startseite</a>
+        </div>
+        <div class="link">
+        <img src="wasser_weiß.png" class="aimg" alt="-">
+            <a href="#">Regeln</a>
+        </div>
+        <div class="link">
+        <img src="erde_weiß.png" class="aimg" alt="-">
+            <a href="#">Herunterladen</a>
+        </div>
+        <div class="link">
+        <img src="feuer_weiß.png" class="aimg" alt="-">
+            <a href="#">Geschichte</a>
+        </div>
+    </div>
+    <div class="content">
+        <h2 class="ueberschrift">Willkommen bei Pai Sho – Dein Schlüssel zu strategischen Meisterschaften</h2>
+        <p>Entdecke die fesselnde Welt von Pai Sho, dem legendären Spiel der Weisheit und Strategie! Lade dir jetzt unser einzigartig programmiertes Pai Sho herunter und lass dich von der Kombination aus Taktik und Kreativität begeistern.</p>
+        <h3>Warum Pai Sho?</h3>
+        <p><strong>• Einzigartiges Gameplay:</strong> Ob du ein erfahrener Stratege oder ein neugieriger Anfänger bist, unser Spiel bietet für jeden etwas. Lerne die Regeln schnell und tauche tief in die strategischen Möglichkeiten ein.</p>
+        <p><strong>• Taktische Herausforderungen:</strong> Fordere deine Freunde oder dich selbst heraus, während du clevere Züge planst und deine Gegner überlistest. Jedes Spiel ist anders!</p>
+        <p><strong>• Wachsendes Netzwerk:</strong> Werde Teil einer leidenschaftlichen Pai Sho-Community! Teile deine Strategien, lerne von anderen und finde Gleichgesinnte.</p>
+        <p>Bereit für die Herausforderung? Lade dir Pai Sho jetzt herunter und beginne deine Reise in die Welt der Strategien und spannenden Begegnungen!</p>
+        <h2>Auf die Plätze, fertig, Pai Sho!</h2>
+    </div>
+</body>
+</html>
