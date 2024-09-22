@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entdecke die fesselnde Welt von Pai Sho, dem legendären Spiel der Weisheit und Strategie. Lade dir das Spiel herunter und werde Teil einer strategischen Gemeinschaft!">
+    <meta name="keywords" content="Pai Sho, Spiel, Weisheit, Strategie">
+    <title>Pai Sho | Regeln</title>
+    <link rel="icon" href="lotus_rot.png" type="image/png">
+    <style>
+        /*Hintergrund*/
+        body{
+            background-color: #9B726B;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif, Arial, Helvetica;
+        }
+        /*header*/
+        header{
+            background-color: #9B726B;
+            display: flex;
+        }
+        .lotus{
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+        }
+        h1{
+            color: #EBE5E1;
+            font-family: sans-serif, Arial, Helvetica;
+            font-size: 50px;
+        }
+        /*Links*/
+        .seiten {
+            display: flex;
+            justify-content: space-between; 
+            width: 100vw; 
+            padding: 0 20px; 
+            box-sizing: border-box; 
+        }
+
+        .link {
+            display: flex;
+            background-color: #73524C;
+            align-items: center; 
+            border: none;
+            border-radius: 0px;
+            flex: 1; 
+            text-align: center; 
+            margin: 0 5px; 
+        }
+        .link:hover{
+            color: #fff;
+            background-color: #654641;
+        }
+        a{
+            color: #EBE5E1;
+            text-decoration: none;
+            font-family: sans-serif, Arial, Helvetica;
+            font-size: 20px;
+            align-items: center;
+        }
+        .aimg{
+            height: 50px;
+            margin: 4px;
+        }
+        #loaded{
+            background-color: #654641
+        }
+        /*content*/
+        .content{
+            background-color: #EBE5E1;
+            padding-bottom: 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2{
+            padding-top: 40px;
+        }
+        h2, h3{
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-bottom: 20px;
+        }
+        p{
+            margin-left: 8%;
+            margin-right: 8%;
+            margin-bottom: 20px;
+        }
+        .Abbildung{
+            width: 200px;
+            height: auto;
+            margin-left: 8%;
+        }
+        .Abbildung2 {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            padding: 0 10%;
+            box-sizing: border-box;  
+        }
+        .Abbildung3{
+            display: flex;
+            margin-left: 8%;
+        }
+        .Abbildung3 p{
+            margin-left: 3px;
+        }
+        /*Smartphones*/
+        @media (max-width: 720px){
+            .seiten {
+                flex-direction: column; 
+                align-items: center; 
+            }
+
+            .link {
+                width: 100%; 
+                margin: 10px 0; 
+            }
+
+            a {
+                font-size: 18px; 
+            }
+
+            .aimg {
+                height: 40px; 
+            }
+            .Abbildung3 {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+    
+<body>
+    <header>
+        <img src="lotus_rot.png" class="lotus" alt="-">
+        <h1>Pai Sho  |  Regeln</h1>
+    </header>
+    <div class="seiten">
+        <div class="link">
+        <img src="luft_weiß.png" class="aimg" alt="-">
+            <a href="#">Startseite</a>
+        </div>
+        <div class="link" id="loaded">
+        <img src="wasser_weiß.png" class="aimg" alt="-">
+            <a href="#" onclick="reloadPage()">Regeln</a>
+        </div>
+        <div class="link">
+        <img src="erde_weiß.png" class="aimg" alt="-">
+            <a href="#">Herunterladen</a>
+        </div>
+        <div class="link">
+        <img src="feuer_weiß.png" class="aimg" alt="-">
+            <a href="#">Geschichte</a>
+        </div>
+    </div>
+    <div class="content">
+        <h2>Spielmaterialien</h2>
+        <h3>Das Brett</h3>
+        <p>Modernes Pai Sho verwendet ein Standard-Pai-Sho-Brett, wie im Abschnitt "Erste Schritte" beschrieben.</p>
+        <h3>Die Spielsteine</h3>
+        <p>Jeder Spieler bekommt 14 Steine.</p>
+        <img src="Abbildung.png" alt="Abbildung" class="Abbildung">
+        <br>
+        <h2>Gameplay</h2>
+        <p>Im Gegensatz zu den meisten Stilen von Pai Sho spielt das moderne Pai Sho mit einem um 45° gedrehten Brett. Die Kacheln werden an den Schnittpunkten der Linien und nicht in den Räumen gespielt.
+<br>
+        Das Ziel vom modernen Pai Sho ist es, entweder den gegnerischen Weißen Lotus-stein zu erobern oder das Geisterportal (Mitte) mit dem eigenen Weißen Lotus-Stein zu erreichen.</p>
+        <h3>Während einer Runde</h3>
+        <p>Du kannst in jedem Zug nur einen Stein bewegen. Jeder Stein kann entweder zu einem direkt angrenzenden Feld gezogen werden oder über einen eigenen Stein springen. Du kannst so lange über Steine springen, wie es möglich ist.</p>
+        <h3>Vorbereitung</h3>
+        <p>Wie oben schon erwähnt, wird das Spielbrett um 45° gedreht und die Steine wie in der folgenden Abbildung aufgestellt.</p>
+        <img src="Abbildung2.png" alt="Abbildung2" class="Abbildung2">
+        <br>
+        <h2>Steine und ihre Bewegungen</h2>
+        <p>Jeder Stein kann sich pro Zug ein Feld weit bewegen. Bevor man ihn bewegt kann man so oft es möglich ist über seine eigenen Steine springen. Die Steine schlagen wiefolgt:</p>
+        <div class="Abbildung3">
+            <img src="feuer_weiß.png" alt="feuer" class="aimg">
+            <p><strong>Feuer</strong> - Schlägt Luft. Verliert gegen Erde. Ist gleichgestellt mit Wasser.</p>
+        </div>
+        <div class="Abbildung3">
+            <img src="luft_weiß.png" alt="luft" class="aimg">
+            <p><strong>Luft</strong> - Schlägt Wasser. Verliert gegen Feuer. Ist gleichgestellt mit Erde.</p>
+        </div>
+        <div class="Abbildung3">
+            <img src="wasser_weiß.png" alt="wasser" class="aimg">
+            <p><strong>Wasser</strong> - Schlägt Erde. Verliert gegen Luft. Ist gleichgestellt mit Feuer.</p>
+        </div>
+        <div class="Abbildung3">
+            <img src="erde_weiß.png" alt="erde" class="aimg">
+            <p><strong>Erde</strong> - Schlägt Feuer. Verliert gegen Wasser. Ist gleichgestellt mit Luft.</p>
+        </div>
+        <div class="Abbildung3">
+            <img src="avatar_weiß.png" alt="avatar" class="aimg">
+            <p><strong>Avatar</strong> - Schlägt alles. Verliert gegen alles. Ist mit nichts gleichgestellt.</p>
+        </div>
+        <div class="Abbildung3">
+            <img src="lotus_weiß.png" alt="lotus" class="aimg">
+            <p><strong>Weißer Lotus</strong> - Schlägt nichts. Verliert gegen alles. Ist mit nichts gleichgestellt.</p>
+        </div>
+        <br>
+        <p>Der weiße Lotus-Stein kann nicht springen. Wenn er gefangen wird, hat er einen Zug, um zu entkommen. Wenn er nicht entkommt, gilt er als tot.<br>
+
+        Jeder Stein, der neben einem Stein landet, den er besiegt, schlägt diesen Stein. Wenn sich ein Stein neben einem deiner Steine befindet, der ihn besiegt, wird er entfernt. Der Avatar-Stein besiegt jeden Stein, den er angreift, und wird von jedem Stein, der ihn angreift, besiegt.<br>
+
+        Wenn die Avatar-Stein besiegt wird, wird er zum Beginn der nächsten Runde an seinem Startort wiedergeboren (wenn sich ein Stein am Startort des Avatars befindet oder den Startort angreift, wird der Avatar nicht wiedergeboren, bis der Raum frei und sicher ist).<br>
+
+        Ein Stein kann sich um eins bewegen, bevor er über verbündete Steine springt. Die Sprungaktion kann so oft durchgeführt werden, wie es Steine zum Springen gibt. Die Sprungaktion kann durchgeführt werden, bevor der Stein seine Bewegung macht.</p>
+        <br>
+        <h2>Beende das Spiel</h2>
+        <p>Es gibt folgende Möglichkeiten das Spiel zu beenden:<br>
+        • Man schlägt den Lotus-Stein des Gegners<br>
+        • Man bringt den Lotus-Stein erfolgreich zum Geistertor.<br>
+        • Beide Spieler sind sich auf ein Unentschieden einig.</p>
+    </div>
+</body>
+    <script>
+        function reloadPage() {
+            location.reload();
+        }
+    </script>
+</html>
