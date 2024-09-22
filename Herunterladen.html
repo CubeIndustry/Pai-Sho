@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entdecke die fesselnde Welt von Pai Sho, dem legendären Spiel der Weisheit und Strategie. Lade dir das Spiel herunter und werde Teil einer strategischen Gemeinschaft!">
+    <meta name="keywords" content="Pai Sho, Spiel, Weisheit, Strategie">
+    <title>Herunterladen</title>
+    <link rel="icon" href="lotus_rot.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /*Hintergrund*/
+        body {
+            background-color: #9B726B;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif, Arial, Helvetica;
+        }
+        /*header*/
+        header {
+            background-color: #9B726B;
+            display: flex;
+        }
+        .lotus {
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+        }
+        h1 {
+            color: #EBE5E1;
+            font-family: sans-serif, Arial, Helvetica;
+            font-size: 50px;
+        }
+        /*Links*/
+        .seiten {
+            display: flex;
+            justify-content: space-between; 
+            width: 100vw; 
+            padding: 0 20px; 
+            margin-bottom: 20px;
+            box-sizing: border-box; 
+        }
+        .link {
+            display: flex;
+            background-color: #73524C;
+            align-items: center; 
+            border: none;
+            border-radius: 0px;
+            flex: 1; 
+            text-align: center; 
+            margin: 0 5px; 
+        }
+        .link:hover {
+            color: #fff;
+            background-color: #654641;
+        }
+        a {
+            color: #EBE5E1;
+            text-decoration: none;
+            font-family: sans-serif, Arial, Helvetica;
+            font-size: 20px;
+            align-items: center;
+        }
+        .aimg {
+            height: 50px;
+            margin: 4px;
+        }
+        #loaded {
+            background-color: #654641;
+        }
+        /*content*/
+        .content {
+            background-color: #EBE5E1;
+            padding: 20px; 
+            padding-top: 0;
+            text-align: center; 
+            padding-bottom: 0;
+        }
+        .code-ueberpruefung {
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            padding-bottom: 20px; 
+        }
+        p {
+            color: #73524C;
+            text-align: center;
+            padding-top: 20%;
+        }
+        button {
+            color: #EBE5E1;
+            background-color: #73524C;
+            border: none;
+            border-radius: 15px; 
+            padding: 10px 20px; 
+            margin: 10px 0;
+            margin-left: 10px;
+            cursor: pointer; 
+            transition: background-color 0.3s; 
+        }
+        button:hover {
+            background-color: #654641; 
+        }
+        #iroh {
+            max-width: 40%; 
+            height: auto;
+            display: block; 
+        }
+        /*Smartphones*/
+        @media (max-width: 720px) {
+            .seiten {
+                flex-direction: column; 
+                align-items: center; 
+            }
+            .link {
+                width: 100%; 
+                margin: 10px 0; 
+            }
+            a {
+                font-size: 18px; 
+            }
+            .aimg {
+                height: 40px; 
+            }
+            .download-section {
+                flex-direction: column; /* Buttons untereinander auf kleinen Bildschirmen */
+                align-items: center; /* Zentriere die Buttons */
+            }
+            #iroh {
+                max-width: 80%; /* Bildbreite auf kleinen Bildschirmen anpassen */
+                margin-top: 20px; /* Abstand zum Bild */
+            }
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <img src="lotus_rot.png" class="lotus" alt="-">
+        <h1>Pai Sho  |  Laden</h1>
+    </header>
+    <!-- Links -->
+    <div class="seiten">
+        <div class="link">
+            <img src="luft_weiß.png" class="aimg" alt="-">
+            <a href="/Pai-Sho/">Startseite</a>
+        </div>
+        <div class="link">
+            <img src="wasser_weiß.png" class="aimg" alt="-">
+            <a href="/Pai-Sho/Regeln">Regeln</a>
+        </div>
+        <div class="link" id="loaded">
+            <img src="erde_weiß.png" class="aimg" alt="-">
+            <a href="#" onclick="reloadPage()">Herunterladen</a>
+        </div>
+        <div class="link">
+            <img src="feuer_weiß.png" class="aimg" alt="-">
+            <a href="/Pai-Sho/Geschichte">Geschichte</a>
+        </div>
+    </div>
+    <!-- content -->
+    <div class="content">
+        <p id="anweisung">Gebe bitte den erhaltenen Code ein, um fortzufahren.</p>
+        <div class="code-ueberpruefung">
+            <input type="text" id="passwordInput" placeholder="XXXX-XXXX-XXXX">
+            <button onclick="checkPassword()" id="checkButton">Überprüfen</button>
+        </div>
+        <div class="download-section hidden">
+            <div class="download-links">
+                <a href="#" onclick="goBack()" download><button><i class="fas fa-download"></i> Download für Windows</button></a>
+                <a href="#" onclick="goBack()" download><button><i class="fas fa-download"></i> Download für Android</button></a>
+                <img src="iroh.png" alt="iroh" id="iroh" class="hidden">
+            </div>
+        </div>
+    </div>
+    <!-- JS -->
+    <script>
+        let wrongAttempts = 0; // Zähler für falsche Eingaben
+        const maxAttempts = 3; // Maximale Anzahl an Versuchen
+        const lockoutTime = 5 * 60 * 1000; // 5 Minuten in Millisekunden
+        let timeout; // Variable für den Timeout
+
+        // Neuladen der Seite
+        function reloadPage() {
+            location.reload();
+        }
+        function goBack() {
+            document.querySelector('.download-section').classList.add('hidden');
+            document.getElementById('checkButton').classList.remove('hidden');
+            document.getElementById('passwordInput').classList.remove('hidden');
+            document.getElementById('anweisung').classList.remove('hidden');
+            document.getElementById('passwordInput').value = ''; // Eingabefeld zurücksetzen
+        }
+        // Codes abrufen
+        async function fetchPasswords() {
+            const response = await fetch('codes.txt');
+            const text = await response.text();
+            return text.split(/\n/).map(line => line.trim());
+        }
+
+        // Passwort überprüfen
+        async function checkPassword() {
+            const userInput = document.getElementById('passwordInput').value;
+            const passwords = await fetchPasswords();
+
+            // Wenn Benutzer gesperrt ist
+            if (wrongAttempts >= maxAttempts) {
+                alert("Du musst 5 Minuten warten, bevor du es erneut versuchen kannst.");
+                return;
+            }
+
+            if (passwords.includes(userInput)) {
+                // Richtiger Code
+                document.querySelector('.download-section').classList.remove('hidden'); // Download-Links anzeigen
+                document.getElementById('iroh').classList.remove('hidden');
+                document.getElementById('checkButton').classList.add('hidden');
+                document.getElementById('passwordInput').classList.add('hidden');
+                document.getElementById('anweisung').classList.add('hidden');
+
+                // Hier kannst du auch den Code aus der Liste entfernen oder den Status speichern
+                // z.B. durch eine API-Anfrage, um sicherzustellen, dass er nicht erneut verwendet wird
+            } else {
+                wrongAttempts++;
+                alert("Falsches Passwort. Versuch " + wrongAttempts + " von " + maxAttempts);
+
+                // Wenn maximale Anzahl erreicht, sperre den Benutzer
+                if (wrongAttempts === maxAttempts) {
+                    alert("Zu viele falsche Versuche. Du bist für 5 Minuten gesperrt.");
+                    document.getElementById('checkButton').disabled = true; // Button deaktivieren
+                    timeout = setTimeout(() => {
+                        wrongAttempts = 0; // Zähler zurücksetzen
+                        document.getElementById('checkButton').disabled = false; // Button wieder aktivieren
+                    }, lockoutTime);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
