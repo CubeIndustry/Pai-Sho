@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Entdecke die fesselnde Welt von Pai Sho, dem legendären Spiel der Weisheit und Strategie. Lade dir das Spiel herunter und werde Teil einer strategischen Gemeinschaft!">
+    <meta name="keywords" content="Pai Sho, Spiel, Weisheit, Strategie">
+    <title>Geschichte</title>
+    <link rel="icon" href="lotus_rot.png" type="image/png">
+    <style>
+        /*Hintergrund*/
+        body{
+            background-color: #9B726B;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif, Arial, Helvetica;
+        }
+        /*header*/
+        header{
+            background-color: #9B726B;
+            display: flex;
+        }
+        .lotus{
+            height: 100px;
+            width: 100px;
+            margin: 10px;
+        }
+        h1{
+            color: #EBE5E1;
+            font-family: sans-serif, Arial, Helvetica;
+            font-size: 50px;
+        }
+        /*Links*/
+        .seiten {
+            display: flex;
+            justify-content: space-between; 
+            width: 100vw; 
+            padding: 0 20px; 
+            box-sizing: border-box; 
+        }
+
+        .link {
+            display: flex;
+            background-color: #73524C;
+            align-items: center; 
+            border: none;
+            border-radius: 0px;
+            flex: 1; 
+            text-align: center; 
+            margin: 0 5px; 
+        }
+        .link:hover{
+            color: #fff;
+            background-color: #654641;
+        }
+        a{
+            color: #EBE5E1;
+            text-decoration: none;
+            font-family: sans-serif, Arial, Helvetica;
+            font-size: 20px;
+            align-items: center;
+        }
+        .aimg{
+            height: 50px;
+            margin: 4px;
+        }
+        #loaded{
+            background-color: #654641
+        }
+        /*content*/
+        .content{
+            background-color: #EBE5E1;
+            padding-bottom: 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2{
+            padding-top: 40px;
+        }
+        h2, h3{
+            margin-left: 5%;
+            margin-right: 5%;
+            margin-bottom: 20px;
+        }
+        p{
+            margin-left: 8%;
+            margin-right: 8%;
+            margin-bottom: 20px;
+        }
+        /*Smartphones*/
+        @media (max-width: 720px){
+            .seiten {
+                flex-direction: column; 
+                align-items: center; 
+            }
+
+            .link {
+                width: 100%; 
+                margin: 10px 0; 
+            }
+
+            a {
+                font-size: 18px; 
+            }
+
+            .aimg {
+                height: 40px; 
+            }
+        }
+    </style>
+</head>
+    
+<body>
+    <header>
+        <img src="lotus_rot.png" class="lotus" alt="-">
+        <h1>Pai Sho  |  Geschichte</h1>
+    </header>
+    <div class="seiten">
+        <div class="link">
+        <img src="luft_weiß.png" class="aimg" alt="-">
+            <a href="/Pai-Sho/">Startseite</a>
+        </div>
+        <div class="link">
+        <img src="wasser_weiß.png" class="aimg" alt="-">
+            <a href="/Pai-Sho/Regeln">Regeln</a>
+        </div>
+        <div class="link">
+        <img src="erde_weiß.png" class="aimg" alt="-">
+            <a href="/Pai-Sho/Herunterladen">Herunterladen</a>
+        </div>
+        <div class="link" id="loaded">
+        <img src="feuer_weiß.png" class="aimg" alt="-">
+            <a href="#" onclick="reloadPage()">Geschichte</a>
+        </div>
+    </div>
+    <div class="content">
+        <h2>Die Geschichte des Pai Sho</h2>
+        <p>Pai Sho ist ein Zwei-Spieler-Spiel, das aus der Zeit von Raava und den Geistern stammt. Die Legende besagt, dass die Geister das Spiel entwickelt haben, um ihre Verbindung zur physischen Welt zu stärken. Obwohl jede Nation behauptet, der Geburtsort von Pai Sho gewesen zu sein, glauben Historiker, dass die Geschichten der Geister ihren wahren Ursprung haben.<br>
+<br>
+        Pai Sho wurde für alles verwendet, von Entspannung, Meditation und Strategie bis hin zu Glücksspiel und Wettkampf. Mit jeder Nation und jedem Volk, das seine eigenen Spielmethoden und Regeln schafft. Am Ende des Hundertjährigen Krieges enthüllt wurde, benutzte der Orden des Weißen Lotus Pai Sho als eine Möglichkeit, Mitglieder ihrer Geheimgesellschaft zu identifizieren. Heute verwendet der Orden des Weißen Lotus Pai Sho, um seine Mitglieder zu testen und zu bewerten. Wenn Sie die verschiedenen Stile von Pai Sho erlernen, sind Sie möglicherweise auf dem Weg, den Rang des Groß-Lotus zu erreichen.<br></p>
+        <h3>Modernes Pai Sho</h3>
+        <p>Das moderne Pai Sho wurde geschaffen, als eine Gruppe von Menschen den Avatar bat, einen standardisierten Stil von Pai Sho zu erstellen. Müde, durch die vielen Möglichkeiten, Pai Sho zu spielen, verwirrt zu sein, schickte diese kleine Gruppe viele Anfragen an den Avatar in der Hoffnung, dass sie einen Standard für das Spiel erstellen würde. Dies brachte das hervor, was wir Modern Pai Sho nennen.<br>
+<br>
+        Der moderne Pai Sho basiert auf einer Stein-Papier-Schere-Methode, bei der die Vier Nationen als treibende Kräfte verwendet werden. Das Ziel ist es, das Geisterportal in der Mitte des Brettes mit dem weißen Lotus-Stein zu erreichen.</p>
+    </div>
+</body>
+    <script>
+        function reloadPage() {
+            location.reload();
+        }
+    </script>
+</html>
