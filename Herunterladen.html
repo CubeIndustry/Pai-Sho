@@ -204,7 +204,7 @@
 
         // Passwort überprüfen
         async function checkPassword() {
-            const userInput = document.getElementById('passwordInput').value;
+            const userInput = document.getElementById('passwordInput').value.trim();
             const passwords = await fetchPasswords();
 
             // Wenn Benutzer gesperrt ist
