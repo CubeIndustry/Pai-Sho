@@ -37,7 +37,6 @@
             justify-content: space-between; 
             width: 100vw; 
             padding: 0 20px; 
-            margin-bottom: 20px;
             box-sizing: border-box; 
         }
         .link {
@@ -141,7 +140,7 @@
     <!-- header -->
     <header>
         <img src="lotus_rot.png" class="lotus" alt="-">
-        <h1>Pai Sho  |  Laden</h1>
+        <h1>Pai Sho  |  Download</h1>
     </header>
     <!-- Links -->
     <div class="seiten">
@@ -171,82 +170,80 @@
         </div>
         <div class="download-section hidden">
             <div class="download-links">
-                <a href="#" onclick="goBack()" download><button><i class="fas fa-download"></i> Download für Windows</button></a>
-                <a href="#" onclick="goBack()" download><button><i class="fas fa-download"></i> Download für Android</button></a>
-                <img src="iroh.png" alt="iroh" id="iroh" class="hidden">
+                <a href="#" download onclick="goBack()"><button><i class="fas fa-download"></i> Download für Windows</button></a>
+                <a href="#" download onclick="goBack()"><button><i class="fas fa-download"></i> Download für Android</button></a>
             </div>
+            <img src="iroh.png" alt="iroh" id="iroh" class="hidden">
         </div>
     </div>
+
     <!-- JS -->
     <script>
         let wrongAttempts = 0; // Zähler für falsche Eingaben
-const maxAttempts = 3; // Maximale Anzahl an Versuchen
-const lockoutTime = 5 * 60 * 1000; // 5 Minuten in Millisekunden
-let timeout; // Variable für den Timeout
+        const maxAttempts = 3; // Maximale Anzahl an Versuchen
+        const lockoutTime = 5 * 60 * 1000; // 5 Minuten in Millisekunden
+        let timeout; // Variable für den Timeout
 
-// Neuladen der Seite
-function reloadPage() {
-    location.reload();
-}
-
-// Codes abrufen
-async function fetchPasswords() {
-    const response = await fetch('codes.txt');
-    const text = await response.text();
-    return text.split(/\n/).map(line => line.trim());
-}
-
-// Passwort überprüfen
-async function checkPassword() {
-    const userInput = document.getElementById('passwordInput').value.trim(); // Trim entfernt Leerzeichen
-    const passwords = await fetchPasswords();
-
-    // Wenn das Eingabefeld leer ist oder nur Leerzeichen enthält
-    if (userInput === "") {
-        alert("Bitte gib einen gültigen Code ein.");
-        return; // Beende die Funktion hier
-    }
-
-    // Wenn Benutzer gesperrt ist
-    if (wrongAttempts >= maxAttempts) {
-        alert("Du musst 5 Minuten warten, bevor du es erneut versuchen kannst.");
-        return;
-    }
-
-    if (passwords.includes(userInput)) {
-        // Richtiger Code
-        document.querySelector('.download-links').classList.remove('hidden'); // Download-Links anzeigen
-        document.getElementById('iroh').classList.remove('hidden');
-        document.getElementById('checkButton').classList.add('hidden');
-        document.getElementById('passwordInput').classList.add('hidden');
-        document.getElementById('anweisung').classList.add('hidden');
-        
-        // Hier kannst du auch den Code aus der Liste entfernen oder den Status speichern
-        // z.B. durch eine API-Anfrage, um sicherzustellen, dass er nicht erneut verwendet wird
-    } else {
-        wrongAttempts++;
-        alert("Falsches Passwort. Versuch " + wrongAttempts + " von " + maxAttempts);
-
-        // Wenn maximale Anzahl erreicht, sperre den Benutzer
-        if (wrongAttempts === maxAttempts) {
-            alert("Zu viele falsche Versuche. Du bist für 5 Minuten gesperrt.");
-            document.getElementById('checkButton').disabled = true; // Button deaktivieren
-            timeout = setTimeout(() => {
-                wrongAttempts = 0; // Zähler zurücksetzen
-                document.getElementById('checkButton').disabled = false; // Button wieder aktivieren
-            }, lockoutTime);
+        // Neuladen der Seite
+        function reloadPage() {
+            location.reload();
         }
-    }
-}
 
-// Funktion zum Zurückkehren zum Code-Check
-function goBack() {
-    document.querySelector('.download-links').classList.add('hidden'); // Download-Links verstecken
-    document.getElementById('iroh').classList.add('hidden');
-    document.getElementById('checkButton').classList.remove('hidden');
-    document.getElementById('passwordInput').classList.remove('hidden');
-    document.getElementById('anweisung').classList.remove('hidden');
-}
+        // Codes abrufen
+        async function fetchPasswords() {
+            const response = await fetch('codes.txt');
+            const text = await response.text();
+            return text.split(/\n/).map(line => line.trim());
+        }
+
+        // Passwort überprüfen
+        async function checkPassword() {
+            const userInput = document.getElementById('passwordInput').value.trim(); // Trim entfernt Leerzeichen
+            const passwords = await fetchPasswords();
+
+            // Wenn das Eingabefeld leer ist oder nur Leerzeichen enthält
+            if (userInput === "") {
+                alert("Bitte gib einen gültigen Code ein.");
+                return; // Beende die Funktion hier
+            }
+
+            // Wenn Benutzer gesperrt ist
+            if (wrongAttempts >= maxAttempts) {
+                alert("Du musst 5 Minuten warten, bevor du es erneut versuchen kannst.");
+                return;
+            }
+
+            if (passwords.includes(userInput)) {
+                // Richtiger Code
+                document.querySelector('.download-section').classList.remove('hidden'); // Download-Links anzeigen
+                document.getElementById('iroh').classList.remove('hidden');
+                document.getElementById('checkButton').classList.add('hidden');
+                document.getElementById('passwordInput').classList.add('hidden');
+                document.getElementById('anweisung').classList.add('hidden');
+            } else {
+                wrongAttempts++;
+                alert("Falsches Passwort. Versuch " + wrongAttempts + " von " + maxAttempts);
+
+                // Wenn maximale Anzahl erreicht, sperre den Benutzer
+                if (wrongAttempts === maxAttempts) {
+                    alert("Zu viele falsche Versuche. Du bist für 5 Minuten gesperrt.");
+                    document.getElementById('checkButton').disabled = true; // Button deaktivieren
+                    timeout = setTimeout(() => {
+                        wrongAttempts = 0; // Zähler zurücksetzen
+                        document.getElementById('checkButton').disabled = false; // Button wieder aktivieren
+                    }, lockoutTime);
+                }
+            }
+        }
+
+        // Funktion zum Zurückkehren zum Code-Check
+        function goBack() {
+            document.querySelector('.download-section').classList.add('hidden'); // Download-Links verstecken
+            document.getElementById('iroh').classList.add('hidden');
+            document.getElementById('checkButton').classList.remove('hidden');
+            document.getElementById('passwordInput').classList.remove('hidden');
+            document.getElementById('anweisung').classList.remove('hidden');
+        }
     </script>
 </body>
 </html>
